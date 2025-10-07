@@ -70,3 +70,5 @@ while (not(letraEncontrada) and indice < len(frase)-1):
         print(f"letra encontrada en el indice  {indice}")
     else:
         indice +=1
+
+        
