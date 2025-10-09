@@ -79,7 +79,7 @@ while (not(acertado)):
         continue
     numero = int (numero)
     if (numero == 99):
-        print("adios")
+        print("Adios")
         break
     if (numero < 0 or numero > 10):
         print (f"{numero} no es un valor entre 0 y 10")

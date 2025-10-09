@@ -2,10 +2,10 @@
 
 # Entrada de datos del usuario. Identificación del tipo de dato.
 
-edad = input("introducie la edad.")
+edad = input("introducie la edad.")    #introducie la edad.
 print (edad)
 tipo_de_datos = type(edad) #Te dice el tipo de dato que es edad.
-print (tipo_de_datos)
+print (tipo_de_datos)   #<class 'str'>
 
 #BOOLEANOS, IF   ( Comparadores == != > < >= <= )
 verdadero = True
