@@ -146,7 +146,7 @@ texto = """Seguramente hayas notado que tu productividad ha bajado desde que tra
 Es muy importante que logremos teletrabajar efectivamente y de manera autorregulada.
 Esto se traduce en finalizar antes nuestras tareas y evitar jornadas laborales interminables.
 El primer consejo y uno de los más importantes ya te lo he dado en el apartado anterior.
-Tenemos que construir un espacio de trabajao en el que nos sintamos cómodos y dispongamos de todas las herramientas neecesarias para teletrabajar.
+Tenemos que construir un espacio de trabajo en el que nos sintamos cómodos y dispongamos de todas las herramientas neecesarias para teletrabajar.
 En la medida de los posible, es importante teletrabajar siempre en el mismo lugar.
 De esta forma, nuestro cerebro asocia el sitio con la acción de trabajar y nos hará estar más focalizados en nuestras tareas."""
 
@@ -187,13 +187,16 @@ coincidencias = [] #Lista que contiene el número de veces que aparecen los elem
 
 # Buscamos una palabra dentro del texto clave.
 for palabra in palabrasClaves:
-    pass
-
+    cnt = 0
+    for palabraABuscar in palabrasABuscar:
+        if palabra == palabraABuscar:
+            cnt +=1
+    coincidencias.append(cnt)
 
 # Se imprime los resultados.
-for cnt in range(palabrasClaves):
-    break # Temporal que por aquí falta para llegar.
+cnt = 0
+for valor in palabrasClaves:
     print (f"El valor {palabrasClaves[cnt]} se reipte {coincidencias[cnt]} veces.\n")
-
+    cnt +=1
 
 print (palabrasClaves)
