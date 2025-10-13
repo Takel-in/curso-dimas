@@ -179,6 +179,16 @@ for index in range(len(palabrasClaves)-1, -1, -1):
     if (palabrasClaves[index] == "" or palabrasClaves[index].isnumeric() ):
         palabrasClaves.pop(index)        
     
+"""  LA FORMA EN QUE LO HACE EL.
+posición = 0
+while (if poaisicón < (keywords))   #Comprobar si en vez de < es <=
+    if (keyword[posicion] == '' or keyword[posicion].isnumeric()):
+        keyword.pop(posición)
+    else
+        posición +=1
+"""    
+
+
 # Preparamos la siguiente parte del ejercicio.
 palabrasABuscar = texto.split()
 coincidencias = [] #Lista que contiene el número de veces que aparecen los elementos en el texto.
@@ -190,7 +200,7 @@ for palabra in palabrasClaves:
     cnt = 0
     for palabraABuscar in palabrasABuscar:
         if palabra == palabraABuscar:
-            cnt +=1
+            cnt +=1          # El cambia un poco y lo que hace es en palabras clave poner .index(palabra clave) que ya sabemos que existe.
     coincidencias.append(cnt)
 
 # Se imprime los resultados.
