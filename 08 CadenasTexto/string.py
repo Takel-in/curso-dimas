@@ -91,3 +91,5 @@ texto = "Format String Basico:  Has comprado {} garrafas a un preción de {} por
 print (texto) # Format String Basico:  Has comprado 5 garrafas a un preción de 1.5 por garrafa lo que da: 7.5
 
 print(f"Format String Basico:  Has comprado {cantidad} garrafas a un preción de {precio} por garrafa lo que da: {cantidad * precio}")
+# Format String Basico:  Has comprado 5 garrafas a un preción de 1.5 por garrafa lo que da: 7.5
+
