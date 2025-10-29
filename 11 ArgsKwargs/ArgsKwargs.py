@@ -107,3 +107,17 @@ def crearPersonaje2 (nombre, *args, **kwargs): #Nombre Olbigatorio, *args para c
     return descripcion
 
 print (crearPersonaje2 ("pepito", "ataque fuerte", "bola de fuego", clase="mago", raza="elfo", mascota = "serpiente"))
+### PEPITO ###
+#
+### DESCRIPCION
+#
+#-clase --> mago
+#-raza --> elfo
+#-mascota --> serpiente
+### HABILIDADES ###
+#
+#-ataque fuerte
+#-bola de fuego
+
+# Esto no se podría hacer.
+#print (crearPersonaje2 ("pepito", mascota = "serpiente",  "bola de fuego", clase="mago", raza="elfo", "ataque fuerte"))
