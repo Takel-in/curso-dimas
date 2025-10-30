@@ -89,4 +89,5 @@ print (artistas) #{1: 'C.Tangana', 2: 'Duki'}
 elementos = artistas.items()
 print (elementos) #dict_items([(1, 'C.Tangana'), (2, 'Duki')])
 for clave, valor in elementos:
-    print (f"{clave} -> {valor}")
+    print (f"{clave} -> {valor}")   #1 -> C.Tangana
+                                    #2 -> Duki
