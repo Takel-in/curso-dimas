@@ -57,7 +57,7 @@ frase = "Todos los caracteeres de una frase los contamos"
 count = 0
 for caracter in frase:
     count +=1
-    if (caracter == "l"):
+    if (caracter == "s"):
         break
 else: # Cuando se ejecuta todas las intereaciones ejecutas al sugiente intrucción siempre no se haya ejecutado un break
     print (f"la frase contiene {count} caracteres")

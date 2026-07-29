@@ -1,6 +1,6 @@
 # Capítulo 4 Funciones
 # Definición de las funciones, se usa la palabra reservada def y es toda la función.
-def saludar():
+def saludar(): # A esto se le llama definir la función.
     print("saludo dentro de la función. ")
 
 saludar()
@@ -26,7 +26,7 @@ print (valor)
 print (suma (2.3, 4))
 
 def suma2(a, b):
-    return a+ b
+    return a + b
 
 valor = suma2 (10, 5) #valor al estar definida fuera de la función es global.
 print (valor)

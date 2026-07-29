@@ -75,11 +75,11 @@ Texto ="123456789"
 suma = 0
 for c in texto:
     suma += int(c)
-else: #REcordar que else aquí se ejecuta si se ha realizado una salida sin break del for. Es mo un punto final del for.
+else: #REcordar que else aquí se ejecuta si se ha realizado una salida sin break del for. Es un punto final del for.
     print ("El resultado total es " + str(suma))
 
 #Format String
-# Nos  permiten generar string cominando texto con otras variables de forma sencilla y legible.
+# Nos  permiten generar string combinando texto con otras variables de forma sencilla y legible.
 #Ej. Tenemos 5 Garrafas a un precio de 1.50 euros cada garrafa. Vamos a presentarlo de varias formas.
 cantidad = 5
 precio = 1.50

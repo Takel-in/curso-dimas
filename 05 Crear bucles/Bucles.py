@@ -64,7 +64,7 @@ letraEncontrada = False
 letra ="a" #letra a encontrar.
 frase = "En este momento estoy buscando la letra a"
 indice = 0
-while (not(letraEncontrada) and indice < len(frase)-1):
+while (not(letraEncontrada) and indice < len(frase)-1): #También se poría poner range(frase)
     if (frase[indice] == letra):
         letraEncontrada = not(letraEncontrada)
         print(f"letra encontrada en el indice  {indice}")

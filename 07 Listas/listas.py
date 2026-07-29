@@ -105,8 +105,8 @@ print (valoreliminar) #plátano
 frutas.remove("kiwi")
 print (frutas) # ['papaya', 'melocotón']
 
-#frutas.remove ("jajaj") #ERR
-#frutas.pop(33) #ERR
+#frutas.remove ("jajaj") #ERR -> list.remove(x): x is not in list
+#frutas.pop(33) #ERR -> pop index out of range
 
     # otra forma de eliminar un elemento, pero creo que esta vez no retorna el elemento eliminado.
 del frutas[0]

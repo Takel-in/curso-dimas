@@ -21,7 +21,7 @@ posicion = mail.find('*')
 print (posicion) # -1
 
 # posicion = mail.index('*') 
-# print (posicion) # Da excepción.
+# print (posicion) # Da excepción. -> FalueError: substring not found
 
 # La diferencia entre index y finid es que index si no lo encuentra da exeption y find devuelve -1
 
@@ -119,7 +119,7 @@ print ("Metrodo upper:") # Convierte todo a mayúsculas
 print (Texto.upper())  # ESTO ES UN TEXTO DE EJEMPLO
 print ("Metrodo Title:") # Convierte la primera letra de cada palabra y la pone en mayúsculas
 print (Texto.title()) # Esto Es Un Texto De Ejemplo
-print ("Metrodo Capitalize:") # Convierte la primera letra de trodo el string y la pone en mayúsculas.
+print ("Metrodo Capitalize:") # Convierte la primera letra de todo el string y la pone en mayúsculas.
 print (Texto.capitalize()) # Esto es un texto de ejemplo
 print ("Metrodo rjust:") # Alineación de caracteres e indica los caracteres en blanco que tiene que poner al inicio.
 print (Texto.rjust(len(Texto)+8)) #Esto es un texto de ejemplo

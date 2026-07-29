@@ -37,7 +37,7 @@ Las Clases
 class Camiseta:
     #En pyton existe un método que se llama __init__ que se ejecuta por defecto cuando generamos una instancia.
     # El método init se encarga de hacer la construcción del objeto.
-#    def __init__(self): #sel pasa una referencia a la instancia actual de la clase.
+#    def __init__(self): #self (QUE NO ES UNA PALABRA RESERVADA) pasa una referencia a la instancia actual de la clase.  
 #        self.talla = "XL"
 #        self.color = "Rojo"
 #        self.precio = 20.99
