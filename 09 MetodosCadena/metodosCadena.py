@@ -32,7 +32,7 @@ print (f"La letra r apare {apariciones} veces") # La letra r apare 2 veces
 
 # Metodos split, replace y join
 
-# El método split sirve para dividir un string medianto un delimitador y convertir ada división en un elemento de la lista.
+# El método split sirve para dividir un string medianto un delimitador y convertir cada división en un elemento de la lista.
 compra = "chocolate, pan, agua, platano, pipas, veduras"
 listaCompra = compra.split(", ") #El delimitador se lo come, es decir quita la coma y el espacio.
 print (listaCompra) # ['chocolate', 'pan', 'agua', 'platano', 'pipas', 'veduras ']

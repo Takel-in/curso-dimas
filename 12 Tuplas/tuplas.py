@@ -83,7 +83,7 @@ for numer, plato in comida:
                                         #('cTangana', 'duki') -> pollo
                                         #('cTangana', 'duki') -> flan
 
-#Como se hizo conlos dicciónarios.
+#Como se hizo con los dicciónarios.
 artistas = {1: "C.Tangana", 2:"Duki"}
 print (artistas) #{1: 'C.Tangana', 2: 'Duki'}
 elementos = artistas.items()

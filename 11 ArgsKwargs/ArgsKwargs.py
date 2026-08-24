@@ -28,7 +28,7 @@ def maximo2 (listaNumeros):  # EL ASTERISCO INDICA QUE SE PASARÁN X ARGUMENTOS.
 print(maximo2([10, 20, 30, 20, 90, -110, 22.3, 9.2])) #90
 print(maximo2([1, 2, 3, 4])) # 4
 
-# Ejemplo porque es interesante *args Porque depende de los que se quies argumentos que dependen de otros argumenos.
+# Ejemplo porque es interesante *args Porque depende de los que se quieras puedes necesitar argumentos que dependen de otros argumenos.
 def formatoDescarga(tipo, *args):
     numArgs = len(args)
 
@@ -47,7 +47,7 @@ def formatoDescarga(tipo, *args):
 formatoDescarga("video", 720)   #El formato seleccionado:
                                 #-Tipo de arhcivo: video
                                 #-La resolución:720
-formatoDescarga("video", 1080,60)   #El formato seleccionado:
+formatoDescarga("video", 1080, 60)   #El formato seleccionado:
                                     #-Tipo de arhcivo: video
                                     #-La resolución:1080
                                     #-FPS:60
@@ -72,7 +72,7 @@ crearPersonajes("leñador", "elfo", "pepito") # PEPITO es un leñador de raza el
 
 
 # Keword arbitrary arguments.
-# Se utilizan cuando no sabemos cúantos argumentos de vlabra clave vamos a recibir.
+# Se utilizan cuando no sabemos cúantos argumentos de palabra - clave vamos a recibir.
 def printKwargs(**kwargs):  #Hay que poner los dos ** .  
     print("\n")
     print("Los atributos del personaje son: ")

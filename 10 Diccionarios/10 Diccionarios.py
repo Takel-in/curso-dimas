@@ -49,7 +49,7 @@ print (alejandro) #{'nombre': 'alejandro', 'edad': 32, 'ciudad': 'Barcelona', 'a
 print (f"valor eliminado {valor}") # valor eliminado CEO
 
     # Acceso elemento de un diccionario.
-edad = alejandro["edad"]
+edad = alejandro["EEdad"]
 print (f"la edad de alejandro: {edad}") #la edad de alejandro: 32
 
     # Actualizar el valor de un diccionario.
