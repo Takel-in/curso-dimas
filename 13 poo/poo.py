@@ -10,7 +10,7 @@ Que Aporta.
 
 Que es un objeto.
     Un objeto se forma principalemnte por dos elementos.
-        Datos: Describen el estado o las características del objeto. A lospdatos de un objeto los 
+        Datos: Describen el estado o las características del objeto. A los datos de un objeto los 
         llamaremos propiedades o atributos.
         Código: ejecuta ciertas funcionalidades o comparamiento de dicho objeto. Los llamaremos métodos.
     ej. Objeto: Camiseta.
