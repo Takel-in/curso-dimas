@@ -55,4 +55,7 @@ empleados = [
 ]
 
 for empleado in empleados:
-    empleado.calcularSueldo()
+    empleado.calcularSueldo() #el sueldo anual de Juan, empleado normal, es de 12120.0 €
+                              #el sueldo anual de Angela, empleado contable, es de 13728.0 €
+                              #el sueldo anual de Ryan, empleado publicista, es de 15120.0 €
+                              #el sueldo anual de pepito, empleado becario, es de 9000 €
