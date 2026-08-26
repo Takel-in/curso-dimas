@@ -150,6 +150,6 @@ c1 = Circulo(2.5)
 print(c1.calcularArea()) #19.634375000000002
 print(c1.calcularPerimetro()) #15.707500000000001
 print(f"La constante PI es {c1.getPi()}") #La constante PI es 3.1415
-c1.setRadio(34)
-c1.setRadio(-34)
-c1.setRadio("hola que tal")
+c1.setRadio(34) #El radio se ha modificado
+c1.setRadio(-34) #El radio no puede ser negativo
+c1.setRadio("hola que tal")#El radio debe ser número positivo
