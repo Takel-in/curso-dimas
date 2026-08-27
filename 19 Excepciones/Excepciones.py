@@ -159,4 +159,7 @@ while True:
 # Ponme numeros separados por espacios: 1 2 a 3 4
 # Los datos son incorrectos
 # Vuelve a introducir los números
+# Ha terminado el ejercicio.            -> EN ESTE CASO NO SALE PORQUE NO TIENE UN BREAK SIMPLEMENTE SE EJECUTA FINALLY CONSTANTEMENTE
+# Ponme numeros separados por espacios: 1 2 3 4 5
+# El valor de la sum es 15.0
 # Ha terminado el ejercicio.
