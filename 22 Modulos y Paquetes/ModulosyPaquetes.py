@@ -35,4 +35,4 @@ cp = CP()
 print(cp.perimteroCirculo(2)) #12.566370614359172
 
 from Paquete.calcularArea import * #trameos todo lo de geometria.
-print(calcularArea.areaCirculo(3))
+print(calcularArea.areaCirculo(3))# 28.273500000000002
