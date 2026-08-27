@@ -77,9 +77,9 @@ import math
 
 eje_x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 eje_xs = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
-eje_y = list(map(lambda x, y : round(math.cos(x) + math.exp(y), 3), eje_x, eje_x)) #Sumamos el coseno de x a la exponencia de y. Al resultado lo redondeamos con 3 (un enero y dos decimales). 
+eje_y = list(map(lambda x, y : round(math.cos(x) + math.exp(y), 3), eje_x, eje_x)) #Sumamos el coseno de x a la exponencia de y. Al resultado lo redondeamos con 3 decimales de precisión. 
                                                                                     #en map paso dos iterable uno para x y otro para Y. 
-print (eje_y)                                                                                    
+print (eje_y) #[2.0, 3.259, 6.973, 19.096, 53.945, 148.697, 404.389, 1097.387, 2980.812, 8102.173]                                                                                   
 
 
 
