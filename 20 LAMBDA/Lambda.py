@@ -44,8 +44,8 @@ print(addMiss("Nerea"))#Miss Nerea
 def elevarA(exponente):
     return lambda base : base**exponente
 
-elevarCuadrado = elevarA(2)
+elevarCuadrado = elevarA(2) # Aqui lo que hace es que elevarcuadrado es una función con valor lambda base : base**2
 elevarCubo = elevarA(3)
 
-print (elevarCuadrado(3))
-print (elevarCubo(2))
+print (elevarCuadrado(3)) #9  Ejecuta la función LAMBDA con el parámetro. 
+print (elevarCubo(2)) #8
