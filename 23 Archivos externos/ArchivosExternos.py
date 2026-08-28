@@ -108,3 +108,79 @@ except FileExistsError:
 
 
 # 5 Metodo SEEK. Podemos controlar la posición desde la cual empezamos a leer.
+fichero = open('./23 Archivos externos/prueba.txt',  encoding='utf-8') #utf-8 es para poder añadir ñ acentos......
+fichero.seek(10) # Empieza a leer a partir del caracter 10.
+print(fichero.read()) # odo lo que había.  -> Y el resto del fichero que no me apetece pegar. #Lee a partir del 11 caracter.
+fichero.close()
+
+
+# 6 Lectura y escritura simultanea.
+fichero = open('./23 Archivos externos/prueba.txt', 'r+',  encoding='utf-8') #utf-8 es para poder añadir ñ acentos......
+lines = fichero.readlines()
+print (lines)
+#CUIDADO lo escribe al final porque antes hemos leido todas las líneas.
+fichero.write('\n esta linea es nueva ')  #La pone al final del fichero.
+fichero.close()
+
+
+fichero = open('./23 Archivos externos/prueba.txt', 'r+',  encoding='utf-8') #utf-8 es para poder añadir ñ acentos......
+fichero.write('\n linea nueva al princpio esta linea es nueva ')
+lines = fichero.readlines()
+print (lines)   #En esa ocasion creo que no a pillado.
+fichero.close()
+
+# 7
+""" 
+    7 Queremos comparar el tiempo que tarda en sumar todos los elememntos de una lista un blucle for y un bucle while.
+
+    Para ellos, debemos calcular el tiempo empleado en cada bucle varis veces y luego promediarlo.
+    Debemos cronometrar lo que tarda cada bucle 100 veces y gauardar cada resultado en un fichero.
+"""
+
+import time
+import random
+
+#Nos cremeamos una lista de 50.000 elementos con números aleatoraio entre 0 y 10000
+lista = []
+for i in range(50000):
+    lista.append(random.randint(0, 1000))
+
+#Fichero donde volcaremos los resultados.'
+fichero = open ('./23 Archivos externos/prueba.txt','wt', encoding='utf-8')
+for i in range (100): #Número de veces que hacemos la prueba.
+
+    #Ejercicio en for
+    res = 0
+    tini = time.time()
+    for num in lista:  #Sumamos todos los valores de la lsita.
+        res += num
+    thorafor = time.time() - tini
+
+
+    #Lo mismo en while.
+    cnt = 0
+    res = 0
+    tini = time.time()
+    while cnt < len(lista):
+        res += lista[cnt]
+        cnt += 1
+    thorawhile = time.time() - tini
+
+    fichero.write(f"{thorafor};{thorawhile}\n")
+fichero.close()
+
+#Calculamos el promeio.
+meanFor=0
+meanWhile=0
+cntline = 0
+fichero = open ('./23 Archivos externos/prueba.txt','r', encoding='utf-8')
+
+for line in fichero.readlines():
+    cntline +=1
+    line.replace('\n', '')
+    timeFor, timeWhile = line.split(';')
+    meanFor += float(timeFor)
+    meanWhile += float(timeWhile)
+
+fichero.close()
+print (f"Tiempo For: {meanFor/cntline}, Tiempo While: {meanWhile/cntline}")
