@@ -11,6 +11,7 @@ class Manager(tk.Tk):
         super().__init__(*args, **kwargs)
         self.title("Yo nunca: The Game")
         container = tk.Frame(self)  #Decimos que este frame es nuestro parent
+        self.mode = "Normal"
         container.pack(
             side = tk.TOP,
             fill = tk.BOTH,
