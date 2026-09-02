@@ -190,5 +190,5 @@ def multiplicar(*args, **kwargs ):
 
 multiplicar(1,2,3,4) #El resutlado de la operación es: 8
 multiplicar(1,2,3,4, max=50) #El resutlado de la operación es: 8
-multiplicar(1,2,3,4, max=6) #El resutlado de la operación es: 8
+multiplicar(1,2,3,4, max=6) #El resutlado de la operación es: 6
 
