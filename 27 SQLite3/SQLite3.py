@@ -131,7 +131,7 @@ def deleteRow():
 
 
 if __name__ == "__main__":  #Esto es una comprobación que hace cuando ejecutamos este fichero como si fera el principal 
-    Aqui pondriamos cosas que solo se ejecuta cuando ejecutamos este fichero como principal.
+    #Aqui pondriamos cosas que solo se ejecuta cuando ejecutamos este fichero como principal.
     createDB()  #Crea el fichero quehemos dicho.
     createTable()
     insertRow("Ibai", 7000000, 25000)
