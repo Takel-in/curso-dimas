@@ -1,8 +1,8 @@
 #FLASK - REST API con SQLite y SQLAlchemy
 
-from flask import Flask
+from flask import Flask, jsonify, request
 from Models import db, Streamers
-
+from logging import exception
 
 from pathlib import Path
 
@@ -31,11 +31,76 @@ with app.app_context():
 def home():
     return "<h1>Welcome Home</h1>"
 
-@app.route("/api/streamers")
+@app.route("/api/streamers", methods=["GET"])
 def getStreamers():
-    streamers = Streamers.query.all()
-    print(streamers)
-    return "<h1>Success</h1>"
+    try:        
+        streamers = Streamers.query.all()
+        # El bucle for funciona como siemre y lo que hace es recorre el resultado obtenido en streamers.
+        # Lo que hace es con cada objeto se llama a serialize que lo que hacía eera devolver la lista en formato diccionario
+        # por lo tanto toreturn será un lista de 5 diccionarios.
+        toreturn =  [streamer.serialize() for streamer in streamers ]
+        #La líenea anterior sería equivalente a realizar.
+             #for streamer in streamers:
+             #toReturn.append(streamer.serialize)
+        return jsonify(toreturn), 200
+#        for streamer in streamers:
+#            print(streamer)
+
+    except Exception:
+        print ("[SERVER]: error")
+        exception("[SERVER]: error -> ")
+        return jsonify ({"msg": "Ha ocurrido un error"}), 500
+
+    #return "<h1>Success</h1>"
+
+@app.route("/api/streamer", methods=["GET"])
+def getStreamerByName():
+    #Pasamos el valor que queremos en la ruta con clave=valor en este caso name=alexelcapo   - Sa separación entre ruta y valores con un ?
+    try:  
+        nameStreamer = request.args["name"] #Esto nos ventra de la URL.
+        streamer = Streamers.query.filter_by(name=nameStreamer).first()
+        if not streamer:
+             return jsonify ({"msg": "Este strimer no existe"}), 200
+        else:
+            return jsonify(streamer.serialize()), 200
+
+    except Exception:
+        print ("[SERVER]: error")
+        exception("[SERVER]: error -> ")
+        return jsonify ({"msg": "Ha ocurrido un error"}), 500
+
+
+@app.route("/api/findstreamer", methods=["GET"])
+def getStreamer():
+    #Pasamos el valor que queremos en la ruta con clave=valor en este caso name=alexelcapo   - Sa separación entre ruta y valores con un ?
+    try:  
+        fields = {} 
+        if "name" in request.args:
+            fields["name"] = request.args["name"]
+
+        if "subs" in request.args:
+            fields["subs"] = request.args["subs"]
+
+        if "followers" in request.args:
+            fields["followers"] = request.args["followers"]
+
+        ##Recordar que el ** desempaqueta el diccionario 
+        streamer = Streamers.query.filter_by(**fields).first()
+        if not streamer:
+             return jsonify ({"msg": "Este strimer no existe"}), 200
+        else:
+            return jsonify(streamer.serialize()), 200
+
+    except Exception:
+        print ("[SERVER]: error")
+        exception("[SERVER]: error -> ")
+        return jsonify ({"msg": "Ha ocurrido un error"}), 500
+
+    #return "<h1>Success</h1>"
+
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=4000)

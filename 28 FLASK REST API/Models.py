@@ -9,3 +9,22 @@ class Streamers(db.Model):  #Definimo una clase con el nombre de una tabla y le 
     name = db.Column(db.String(200), unique = True, nullable=False) #200 es el límite de caracteres que onemos al campo
     subs = db.Column(db.Integer)
     followers = db.Column(db.Integer)
+
+    #Sobreescribimo el método str que imprime los datos.
+    def __str__(self):
+        return "\nNombre: {}. Subs: {}. Followers: {}".format(
+            self.name,
+            self.subs,
+            self.followers
+        )
+
+    # REtorna el conenido de la tabla en formato diccionario.
+    def serialize(self):  
+        return {
+            "rowid": self.rowid,
+            "name": self.name,
+            "subs": self.subs,
+            "followers": self.followers
+        }
+
+    

@@ -1,7 +1,7 @@
 #Es necesario instalar Flas y Flas-SQLAlchemy
 import sqlite3 as sql
 
-DB_PATH = "C:\\Users\\frjoma\\python-learning\\curso-dimas\\28 FLASK REST API\\streamers.db"
+DB_PATH = "C:\\Users\\frjoma\\python-learning\\curso-dimas\\28 FLASK REST API\\database\\streamers.db"
 
 def createDB():
     db = sql.connect(DB_PATH)
