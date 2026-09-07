@@ -38,4 +38,9 @@ diccionario = {
 }
 
 df = pd.DataFrame(diccionario)
-print(df)
+print(df)  #      marca   precio  Disponibilidad
+            #0      audi  20000.0            True
+            #1  mercedes  30000.0           False
+            #2       bmw  40000.0           False
+            #3  mercedes  25000.0            True
+
