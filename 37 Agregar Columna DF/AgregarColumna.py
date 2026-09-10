@@ -37,3 +37,7 @@ print(df)
 
 df.insert(3,"email",["dimas@email","fuan@email","jose@email"])
 print(df)
+#  nombre  edad    país        email profesiones  sueldo
+#0  dimas    23  España  dimas@email   Ingeniero   20000
+#1   Juan    24  Mexico   fuan@email     Maestro   30000
+#2    Ana    25   Chile   jose@email     Bombero   40000
