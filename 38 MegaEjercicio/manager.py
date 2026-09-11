@@ -1,14 +1,15 @@
 import tkinter as tk
 from controller import Controller
 from screens.homeScreen import HomeScreen
+from screens.addTestScreen import AddTestScreem
 
 from style import styles
 
 class Manager(tk.Tk):
-    def __init(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.title("Examenes de Programación")
-        self.contrller = Controller()
+        self.controller = Controller()
 
         self.container = tk.Frame(self)  #Frame Principal
         self.container.pack(
@@ -26,7 +27,20 @@ class Manager(tk.Tk):
 
         #Definimos nuestro diccionario de pantalla.
         self.frame = {}
-        pantallas = (HomeScreen,)
+        pantallas = (HomeScreen, AddTestScreem, )  
         for f in pantallas:
             frame = f(self.container, self)
+            self.frame[f] = frame
+            frame.grid(row =0, column=0, sticky=tk.NSEW) #Esto ocupa toda la pantalla.
+
+        self.show_frame(HomeScreen)
+
+
+    def show_frame(self, frame_class):
+        frames = self.frame[frame_class]
+        frames.tkraise()
+
+    # Aqui empiezan las transiciones de pantallas
+    def homeToCreate(self):
+        self.show_frame(AddTestScreem)
 
