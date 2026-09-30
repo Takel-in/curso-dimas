@@ -14,7 +14,7 @@ class MainMenu(tk.Frame):
         tk.Button(
             self,
             text="HACER UN TEST",
-            command=lambda: print ("clicaldo hacer un test")
+            command=lambda: self.manager.homeToSelect(),
             **styles.STYLE,
             relief=tk.FLAT,
             activebackground=styles.BACKGROUND,
@@ -38,7 +38,7 @@ class MainMenu(tk.Frame):
         tk.Button(
             self,
             text="EDITAR UN TEST",
-            command=lambda: print("has clicado editar unt est")
+            command=lambda: self.manager.homeToUpdate(),
             **styles.STYLE,
             relief=tk.FLAT,
             activebackground=styles.BACKGROUND,

@@ -2,7 +2,8 @@ import tkinter as tk
 from controller import Controller
 from screens.homeScreen import HomeScreen
 from screens.addTestScreen import AddTestScreem
-
+from screens.updateTestScreen import UpdateTestScreen
+from screens.selectTestScreen import SelectTestScreen
 from style import styles
 
 class Manager(tk.Tk):
@@ -10,6 +11,11 @@ class Manager(tk.Tk):
         super().__init__(*args, **kwargs)
         self.title("Examenes de Programación")
         self.controller = Controller()
+        self.selected_test = ""
+        self.num_questions = 0
+        self.num_aciertos =0
+        self.questions = ""
+
 
         self.container = tk.Frame(self)  #Frame Principal
         self.container.pack(
@@ -27,7 +33,7 @@ class Manager(tk.Tk):
 
         #Definimos nuestro diccionario de pantalla.
         self.frame = {}
-        pantallas = (HomeScreen, AddTestScreem, )  
+        pantallas = (HomeScreen, AddTestScreem, UpdateTestScreen, SelectTestScreen, )  
         for f in pantallas:
             frame = f(self.container, self)
             self.frame[f] = frame
@@ -43,4 +49,27 @@ class Manager(tk.Tk):
     # Aqui empiezan las transiciones de pantallas
     def homeToCreate(self):
         self.show_frame(AddTestScreem)
+
+    def homeToUpdate(self):
+        # Siempre que vayamos a esta pantalla necesitamos cargar los test
+        # de nuevo por si se han modificado.
+        new_options = self.get_test_names()
+        self.frame[UpdateTestScreen].options.update_options(new_options)
+        self.show_frame(UpdateTestScreen)
+
+    def homeToSelect(self):
+        # Siempre que vayamos a esta pantalla necesitamos cargar los test
+        # de nuevo por si se han modificado.
+        new_options = self.get_test_names()
+        self.frame[SelectTestScreen].options.update_options(new_options)
+        self.show_frame(SelectTestScreen)
+
+    def selectToExecute(self):...
+
+    # Aqui empiezan los métodos de la BBDD
+    def get_test_names(self):
+        return self.controller.get_test_names()
+
+    def add_question(self, test_name, question_text, question_choices, correct_choice):
+        self.controller.add_question( test_name, question_text, question_choices, correct_choice  )
 

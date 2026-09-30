@@ -20,6 +20,35 @@ class Controller:
         else:
             raise ProgrammingError("Test ya existe")
         
-         
+    def get_test_names(self):
+        tests = self.session.query().with_entities(Test.test_name).all()
+        test_names = [test[0] for test in tests]
+        return test_names
 
+    def add_question(self, test_name, question_text, question_choices, correct_choice):
+        test = self.session.query(Test).filter(Test.test_name == test_name).first()
+        _answers = [
+            Answer (
+                answer_text=choice,
+                is_correct=correct_choice==idx,  #Tenemos definido el campo correcto y miramos cual hemos indicado que es el correcto.
+            ) for idx, choice in enumerate(question_choices)
+        ]
+
+        question = Question(
+            question_text=question_text,
+            answers= _answers,
+            text_id = test.test_id
+            )
+
+        self.session.add(question)
+        self.session.commit
+
+
+
+
+""" 
+    if __name__ == "__main__":
+    t = Controller()
+    t.get_test_names()
+"""
 
