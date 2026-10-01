@@ -41,10 +41,17 @@ class Controller:
             )
 
         self.session.add(question)
-        self.session.commit
+        self.session.commit()
+
+    def get_test_questions(self, test_name):
+        test = self.session.query(Test).filter(Test.test_name == test_name).first()
+        return test.questions
 
 
-
+    def deleteTest(self, test_name):
+        test = self.session.query(Test).filter(Test.test_name == test_name).first()
+        self.session.delete(test)
+        self.session.commit()
 
 """ 
     if __name__ == "__main__":

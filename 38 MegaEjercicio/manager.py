@@ -4,6 +4,9 @@ from screens.homeScreen import HomeScreen
 from screens.addTestScreen import AddTestScreem
 from screens.updateTestScreen import UpdateTestScreen
 from screens.selectTestScreen import SelectTestScreen
+from screens.executeTestScreen import ExecuteTestScreen
+from screens.testFinishedScreen import TestFinishedScreen
+from screens.deleteTestScreen import DeleteTestScreen
 from style import styles
 
 class Manager(tk.Tk):
@@ -33,7 +36,7 @@ class Manager(tk.Tk):
 
         #Definimos nuestro diccionario de pantalla.
         self.frame = {}
-        pantallas = (HomeScreen, AddTestScreem, UpdateTestScreen, SelectTestScreen, )  
+        pantallas = (HomeScreen, AddTestScreem, UpdateTestScreen, SelectTestScreen, ExecuteTestScreen, TestFinishedScreen, DeleteTestScreen)  
         for f in pantallas:
             frame = f(self.container, self)
             self.frame[f] = frame
@@ -64,7 +67,23 @@ class Manager(tk.Tk):
         self.frame[SelectTestScreen].options.update_options(new_options)
         self.show_frame(SelectTestScreen)
 
-    def selectToExecute(self):...
+    def selectToExecute(self):
+        self.selected_test = self.frame[SelectTestScreen].options.selected.get()
+        self.get_test()
+        self.show_frame(ExecuteTestScreen)
+
+    def executeToFinish(self):
+        self.frame[TestFinishedScreen].results.set(
+            f"{self.num_aciertos} / {self.num_questions}"
+        )
+        self.num_aciertos=0
+        self.num_questions=0
+        self.show_frame(TestFinishedScreen)
+
+    def homeToDelete(self):
+        new_options = self.get_test_names()
+        self.frame[DeleteTestScreen].options.update_options(new_options)
+        self.show_frame(DeleteTestScreen)
 
     # Aqui empiezan los métodos de la BBDD
     def get_test_names(self):
@@ -73,3 +92,11 @@ class Manager(tk.Tk):
     def add_question(self, test_name, question_text, question_choices, correct_choice):
         self.controller.add_question( test_name, question_text, question_choices, correct_choice  )
 
+    def get_test(self):
+        if self.selected_test != "" :
+            _questions = self.controller.get_test_questions(self.selected_test)
+            self.questions = iter(_questions)
+            self.frame[ExecuteTestScreen].init_widgets(next(self.questions))
+
+    def deleteTest(self, test_name):
+        self.controller.deleteTest(test_name)

@@ -50,7 +50,7 @@ class MainMenu(tk.Frame):
         tk.Button(
             self,
             text="ELIMINAR UN TEST",
-            command=lambda: print("has clicado eliminar un test")
+            command=lambda: self.manager.homeToDelete(),
             **styles.STYLE,
             relief=tk.FLAT,
             activebackground=styles.BACKGROUND,
